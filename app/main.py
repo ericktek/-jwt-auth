@@ -1,4 +1,6 @@
 from fastapi import FastAPI
+
+from app.routers import auth
 from . import models
 from .database import engine
 from .routers import users, items, blogs
@@ -15,6 +17,7 @@ models.Base.metadata.create_all(engine)
 def read_root():
     return {"message": "Welcome to the FastAPI CRUD API with JWT Authentication!"}
 
+app.include_router(auth.router, prefix="/v1/auth", tags=["Authentication"])
 app.include_router(users.router, prefix="/v1/users", tags=["Users"])
 app.include_router(items.router, prefix="/v1/items", tags=["Items"])
 app.include_router(blogs.router, prefix="/v1/blogs", tags=["Blogs"])

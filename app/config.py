@@ -5,11 +5,10 @@ class Settings(BaseSettings):
     SECRET_KEY: str
     ALGORITHM: str
     ACCESS_TOKEN_EXPIRE_MINUTES: int
-    REFRESH_TOKEN_SECRET_KEY: str
 
     class Config:
         env_file = ".env"
+        extra = "ignore"  # This will ignore any unexpected fields
 
-# Instantiate the settings
+
 settings = Settings()
-

@@ -1,7 +1,7 @@
 from fastapi import HTTPException
 from sqlalchemy.orm import Session
 from . import models, schemas
-from .utils.hash_password import get_password_hash
+from .utils.security import get_password_hash
 
 def get_active_user(db: Session, user_id: int):
     active_user =  db.query(models.User).filter(models.User.id == user_id, models.User.is_active == True).first()
