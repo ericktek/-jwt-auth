@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
+from fastapi.middleware.cors import CORSMiddleware
 
 from . import models
 from app.database import engine
@@ -10,6 +11,17 @@ app = FastAPI(
     description="A FastAPI application with CRUD operations, JWT authentication, and PostgreSQL.",
     version="1.0.0",
 )
+
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Or specify allowed origins
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 models.Base.metadata.create_all(engine)
 
