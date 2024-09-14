@@ -2,8 +2,8 @@ from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 
 from . import models
-from .database import engine
-from .routers import users, items, blogs, auth
+from app.database import engine
+from app.routers import users, items, blogs, auth
 
 app = FastAPI(
     title="FastAPI CRUD with JWT Authentication",
