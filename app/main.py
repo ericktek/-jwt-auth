@@ -27,7 +27,7 @@ html = f"""
                 <li><a href="/redoc">/redoc</a></li>
             </ul>
            <p>Built and deployed by Lemajr <a href="https://github.com/ericktek" target="_blank">GitHub</a>
- Powered by <a href="https://fastapi.tiangolo.com" target="_blank">FastAPI</a> and <a href="https://vercel.com" target="_blank">Vercel</a></p>
+                    Powered by <a href="https://fastapi.tiangolo.com" target="_blank">FastAPI</a> and <a href="https://vercel.com" target="_blank">Vercel</a></p>
         </div>
     </body>
 </html>
